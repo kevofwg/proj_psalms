@@ -40,7 +40,7 @@ def start_show():
 
     images = []
 
-    for i in [0,0.5,1]:
+    for i in [0,0.25,0.5,0.75,1]:
         f = make_arrays(i)
         images.append((f))
     
