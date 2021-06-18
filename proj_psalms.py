@@ -25,14 +25,13 @@ def make_arrays(h):
 
     g = (2*np.pi)/(1080/6)
     z = g*h 
-    # f = np.sin(g*xx)*np.cos(g*yy)+np.sin(g*yy)*np.cos(g*zz)+np.cos(g*xx)*np.sin(g*zz)
 
+    # f = np.sin(g*xx)*np.cos(g*yy)+np.sin(g*yy)*np.cos(g*zz)+np.cos(g*xx)*np.sin(g*zz)
     f = (np.sin(g * xx) * np.cos(g * yy)) + (np.sin(g * yy) * np.cos(g * z)) + (np.cos(g * xx) * np.sin(g * z))
 
+    #h = plt.contourf(x, y, f//119)
+    #plt.show()
 
-    h = plt.contourf(x, y, f//119)
-     
-    plt.show()
     return f
 
 
@@ -40,7 +39,7 @@ def start_show():
 
     images = []
 
-    for i in [0,0.25,0.5,0.75,1]:
+    for i in [0,0.5,1]:
         f = make_arrays(i)
         images.append((f))
     
@@ -63,9 +62,7 @@ def start_show():
 
     trigger_out=[1]*30
 
-
     dlp.defsequence(images,exposure,trigger_in,dark_time,trigger_out,0)
-
 
     dlp.startsequence()
 
