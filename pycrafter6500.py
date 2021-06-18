@@ -293,6 +293,11 @@ class dmd():
     def readreply(self):
         for i in self.ans:
             print (hex(i))
+## LED Brightness Control
+
+    def blue_led(self,brightness):
+        self.command('w', 0x02, 0x0B, 0x01,[brightness])
+        self.checkforerrors()
 
 ## functions for idle mode activation
 

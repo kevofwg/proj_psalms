@@ -32,7 +32,7 @@ def make_arrays(h):
 
     h = plt.contourf(x, y, f//119)
      
-    plt.show()
+    ##plt.show()
     return f
 
 
@@ -66,10 +66,14 @@ def start_show():
 
     dlp.defsequence(images,exposure,trigger_in,dark_time,trigger_out,0)
 
-
+    import pdb
+    pdb.set_trace()
     dlp.startsequence()
 
-
+    dlp.blue_led(0x19)
+    dlp.blue_led(0x40) #Brightness Control 25%
+    dlp.blue_led(0x7F) #brightness @ %50
+    dlp.blue_led(0xBF) #brightness @ %75
 
 #make_arrays()
 
